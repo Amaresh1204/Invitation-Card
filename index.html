@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitation</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .invitation-card {
+            max-width: 100%;
+            margin: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #e44d26;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        p {
+            color: #666;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+        .date {
+            font-weight: bold;
+            color: #e44d26;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 12px 25px;
+            margin-top: 20px;
+            background-color: #e44d26;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #333;
+        }
+
+        .friends-images {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .friend-image {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px; /* Increased margin for spacing on small screens */
+            box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive Styles */
+        @media only screen and (max-width: 600px) {
+            .cta-button {
+                width: 100%;
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="invitation-card" id="invitationCard">
+    <h1><center>Invitation</center></h1>
+    <div id="invitationContent">
+        <img src="https://placekitten.com/600/300" alt="Event Image" style="max-width: 100%; border-radius: 10px; margin-bottom: 20px;">
+        <p>Dear Friends,</p>
+        <p>We are gathering and would love to have you join for a fun-filled time.</p>
+        <p><span class="date">Date:</span> Monday, January 29, 2024</p>
+        <p><span class="date">Time:</span> 7:00 AM</p>
+        <p><span class="date">Location:</span> Bhavanipuram Island</p>
+        <p>Food, drinks, and good company will be provided. Don't miss out!</p>
+    
+    </div>
+
+    <!-- Button to display friends' images -->
+    <button class="cta-button" onclick="toggleFriendsImages()">View Friends' Images</button>
+
+    <!-- Friends' Images Section (initially hidden) -->
+    <div id="friendsImages" class="friends-images" style="display: none;">
+        <h2>Friends' Images</h2>
+        <!-- Random placeholder images for friends -->
+        <img src="https://placekitten.com/200/200" alt="Friend 1" class="friend-image">
+        <img src="https://placekitten.com/200/201" alt="Friend 2" class="friend-image">
+        <img src="https://placekitten.com/200/202" alt="Friend 3" class="friend-image">
+        <!-- Add more images as needed -->
+    </div>
+</div>
+
+<script>
+    // Function to toggle friends' images visibility
+    function toggleFriendsImages() {
+        var friendsImages = document.getElementById('friendsImages');
+        var invitationContent = document.getElementById('invitationContent');
+
+        if (friendsImages.style.display === 'none') {
+            friendsImages.style.display = 'block';
+            invitationContent.style.display = 'none';
+        } else {
+            friendsImages.style.display = 'none';
+            invitationContent.style.display = 'block';
+        }
+    }
+</script>
+
+</body>
+</html>
