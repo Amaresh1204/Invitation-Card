@@ -55,11 +55,24 @@
             text-align: center;
         }
 
+        .friend-container {
+            width: 48%; /* Set a fixed width for each friend container */
+            max-width: 100%; /* Ensure it doesn't exceed 100% width */
+            box-sizing: border-box; /* Include padding and border in the width */
+            margin-bottom: 20px;
+        }
+
         .friend-image {
-            max-width: 100%;
+            width: 100%; /* Set image width to 100% of the container */
             border-radius: 10px;
-            margin-bottom: 20px; /* Increased margin for spacing on small screens */
             box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+            aspect-ratio: 1/1; /* Set aspect ratio for equal height */
+        }
+
+        .friend-name {
+            color: #333;
+            font-size: 1.1em;
+            margin-top: 10px;
         }
 
         /* Responsive Styles */
@@ -69,34 +82,44 @@
                 font-size: 1em;
             }
         }
+
+        /* Updated style for friends-images container */
+        .friends-images {
+            margin-top: 30px;
+            text-align: center;
+            display: flex; /* Use flex display to align images side by side */
+            flex-wrap: wrap; /* Allow images to wrap to the next line if needed */
+            justify-content: space-between; /* Add space between images */
+        }
     </style>
 </head>
 <body>
 
 <div class="invitation-card" id="invitationCard">
-    <h1><center>Invitation</center></h1>
+    <h1><center>Colorful Kitty Party</center></h1>
     <div id="invitationContent">
-        <img src="https://placekitten.com/600/300" alt="Event Image" style="max-width: 100%; border-radius: 10px; margin-bottom: 20px;">
+        <img src="IMG-20231214-WA0200.jpg" alt="Event Image" style="max-width: 100%; border-radius: 10px; margin-bottom: 20px;">
         <p>Dear Friends,</p>
         <p>We are gathering and would love to have you join for a fun-filled time.</p>
         <p><span class="date">Date:</span> Monday, January 29, 2024</p>
         <p><span class="date">Time:</span> 7:00 AM</p>
         <p><span class="date">Location:</span> Bhavanipuram Island</p>
-        <p>Food, drinks, and good company will be provided. Don't miss out!</p>
-    
     </div>
 
     <!-- Button to display friends' images -->
-    <button class="cta-button" onclick="toggleFriendsImages()">View Friends' Images</button>
+    <button class="cta-button" onclick="toggleFriendsImages()">Hosting</button>
 
     <!-- Friends' Images Section (initially hidden) -->
     <div id="friendsImages" class="friends-images" style="display: none;">
-        <h2>Friends' Images</h2>
-        <!-- Random placeholder images for friends -->
-        <img src="https://placekitten.com/200/200" alt="Friend 1" class="friend-image">
-        <img src="https://placekitten.com/200/201" alt="Friend 2" class="friend-image">
-        <img src="https://placekitten.com/200/202" alt="Friend 3" class="friend-image">
-        <!-- Add more images as needed -->
+        <div class="friend-container">
+            <img src="Pic1.jpg" alt="Friend 1" class="friend-image">
+            <span class="friend-name">K.Radhika</span>
+        </div>
+        <div class="friend-container">
+            <img src="pic2.jpg" alt="Friend 2" class="friend-image">
+            <span class="friend-name">Vani</span>
+        </div>
+        <!-- Add more images and names as needed -->
     </div>
 </div>
 
@@ -107,7 +130,7 @@
         var invitationContent = document.getElementById('invitationContent');
 
         if (friendsImages.style.display === 'none') {
-            friendsImages.style.display = 'block';
+            friendsImages.style.display = 'flex'; // Set display to flex to show images side by side
             invitationContent.style.display = 'none';
         } else {
             friendsImages.style.display = 'none';
